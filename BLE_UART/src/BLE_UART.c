@@ -33,9 +33,10 @@ void BLE_UART_Init()
     P3-> SEL0 |= 0x0C;
     P3-> SEL1 &= ~0x0C;
 
-    P1->SEL0 &= ~0x40;
-    P1->SEL1 &= ~0x40;
-    P1->DIR |= 0x40;
+    //P4.1
+    P4->SEL0 &= ~0x01;
+    P4->SEL1 &= ~0x01;
+    P4->DIR |= 0x01;
 
     EUSCI_A2->CTLW0 |= 0x01;
     EUSCI_A2->MCTLW &= 0xFF;
@@ -120,13 +121,13 @@ uint8_t Check_BLE_UART_Data(char BLE_UART_Data_Buffer[], char *data_string)
 void BLE_UART_Reset()
 {
 
-    P1->OUT|= 0x40;
+    P4->OUT|= 0x01;
     Clock_Delay1ms(1000);
 
     BLE_UART_OutString("ATZ\r\n");
     Clock_Delay1ms(3000);
 
-    P1->OUT &= ~0x40;
+    P4->OUT &= ~0x01;
 }
 
 

@@ -10,11 +10,11 @@
  * The following connections must be made:
  *  - Nokia 5110 LCD VCC    <-->  MSP432 LaunchPad VCC (3.3V)
  *  - Nokia 5110 LCD GND    <-->  MSP432 LaunchPad GND
- *  - Nokia 5110 LCD SCE    <-->  MSP432 LaunchPad Pin P9.4 (SCE, Chip Enable)
+ *  - Nokia 5110 LCD SCE    <-->  MSP432 LaunchPad Pin P3.0 (SCE, Chip Enable)
  *  - Nokia 5110 LCD RST    <-->  MSP432 LaunchPad Pin P9.3 (Reset)
  *  - Nokia 5110 LCD D/C    <-->  MSP432 LaunchPad Pin P9.6 (D/C, Data/Command)
- *  - Nokia 5110 LCD MOSI   <-->  MSP432 LaunchPad Pin P9.7 (MOSI)
- *  - Nokia 5110 LCD SCLK   <-->  MSP432 LaunchPad Pin P9.5 (SCLK)
+ *  - Nokia 5110 LCD MOSI   <-->  MSP432 LaunchPad Pin P1.6 (MOSI)
+ *  - Nokia 5110 LCD SCLK   <-->  MSP432 LaunchPad Pin P1.5 (SCLK)
  *  - Nokia 5110 LCD LED    <-->  Unconnected
  *
  * @note This function assumes that the necessary pin configurations for SPI communication have been performed
@@ -138,8 +138,8 @@ const uint8_t ASCII[][5] = {
 
 void Nokia5110_SPI_Init()
 {
-    // Hold the EUSCI_A3 module in reset mode
-    EUSCI_A3->CTLW0 |= 0x01;
+    // Hold the EUSCI_B0 module in reset mode
+    EUSCI_B0->CTLW0 |= 0x01;
 
 // CTWL0 Register Configuration
 //
@@ -156,16 +156,26 @@ void Nokia5110_SPI_Init()
 //   5-2        Reserved     0x0        Reserved
 //   1          UCSTEM       0x1        UCSTE pin is used to generate signal for 4-wire slave
 //   0          UCSWRST      0x1        eUSCI logic held in reset state
-    EUSCI_A3->CTLW0 |= 0xAD83;
+    EUSCI_B0->CTLW0 |= 0xAD83;
 
     // Set the baud rate. The clock frequency used is 1 MHz.
     // N = (Clock Frequency) / (Baud Rate) = (12,000,000 / 1,000,000)
     // N = 3
-    EUSCI_A3->BRW |= 12;
+    EUSCI_B0->BRW |= 12;
 
-    // Configure P9.4, P9.5, and P9.7 pins as primary module function
-    P9->SEL0 |= 0xB0;
-    P9->SEL1 &= ~0xB0;
+    // Configure P1.5 (SCLK), and P1.6(MOSI) pins as primary module function
+    //0110_0000 = 0x60;
+    P1->SEL0 |= 0x60;
+    P1->SEL1 &= ~0x60;
+
+    //Configure the P3.0 pin as an output GPIO pin
+    P3->SEL0 &= ~0x01;
+    P3->SEL1 &= ~0x01;
+    P3->DIR |= 0x01;
+
+    // Initialize the output of the Chip Select signal (active low) to high
+    // by setting Bit 0 in the OUT register
+    P3->OUT |= 0x01;
 
     // Configure P9.3 (Reset) and P9.6 (Data/Command) pins as GPIO pins
     P9->SEL0 &= ~(RESET_BIT | DC_BIT);
@@ -174,13 +184,28 @@ void Nokia5110_SPI_Init()
     // Set the direction of the P9.3 and P9.6 as output
     P9->DIR |= (RESET_BIT | DC_BIT);
 
-    // Clear the software reset bit to enable the EUSCI_A3 module
-    EUSCI_A3->CTLW0 &= ~0x01;
+    // Clear the software reset bit to enable the EUSCI_B0 module
+    EUSCI_B0->CTLW0 &= ~0x01;
 
     // Ensure that the following interrupts are disabled:
     // - Receive Interrupt
     // - Transmit Interrupt
-    EUSCI_A3->IE &= ~0x03;
+    EUSCI_B0->IE &= ~0x03;
+}
+
+void EUSCI_B0_Control_Chip_Select(uint8_t chip_select_enable)
+{
+    // Clear P3.0 to 0 when chip select is enabled
+    if (chip_select_enable == 0x00)
+    {
+        P3->OUT &= ~0x01;
+    }
+
+    // Set P3.0 to 1 when chip select is disabled
+    else
+    {
+        P3->OUT |= 0x01;
+    }
 }
 
 void Nokia5110_SPI_Data_Command_Bit_Out(uint8_t data_command_select)
@@ -255,28 +280,28 @@ void Nokia5110_Init()
 void Nokia5110_Command_Write(uint8_t command)
 {
     // UCBUSY - Wait until SPI is not busy
-    while((EUSCI_A3->STATW & 0x0001) == 0x0001);
+    while((EUSCI_B0->STATW & 0x0001) == 0x0001);
 
     // Set the Data/Command output pin to 0 to indicate that the transmitted byte is a command byte
     Nokia5110_SPI_Data_Command_Bit_Out(0x00);
 
     // Write the command byte to the transmit buffer
-    EUSCI_A3->TXBUF = command;
+    EUSCI_B0->TXBUF = command;
 
     // UCBUSY - Wait until SPI is not busy
-    while((EUSCI_A3->STATW & 0x0001) == 0x0001);
+    while((EUSCI_B0->STATW & 0x0001) == 0x0001);
 }
 
 void Nokia5110_Data_Write(uint8_t data)
 {
     // Wait until UCA3TXBUF is empty
-    while((EUSCI_A3->IFG & 0x0002) == 0x0000);
+    while((EUSCI_B0->IFG & 0x0002) == 0x0000);
 
     // Set the Data/Command output pin to 1 to indicate that the transmitted byte is a data byte
     Nokia5110_SPI_Data_Command_Bit_Out(0x01);
 
     // Write the data byte to the transmit buffer
-    EUSCI_A3->TXBUF = data;
+    EUSCI_B0->TXBUF = data;
 }
 
 void Nokia5110_OutChar(char data)

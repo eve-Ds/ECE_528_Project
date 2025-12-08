@@ -10,7 +10,7 @@
  * The following connections must be made:
  *  - Nokia 5110 LCD VCC    <-->  MSP432 LaunchPad VCC (3.3V)
  *  - Nokia 5110 LCD GND    <-->  MSP432 LaunchPad GND
- *  - Nokia 5110 LCD SCE    <-->  MSP432 LaunchPad Pin P9.4 (SCE, Chip Enable)
+ *  - Nokia 5110 LCD SCE    <-->  MSP432 LaunchPad Pin P3.0 (SCE, Chip Enable)
  *  - Nokia 5110 LCD RST    <-->  MSP432 LaunchPad Pin P9.3 (Reset)
  *  - Nokia 5110 LCD D/C    <-->  MSP432 LaunchPad Pin P9.6 (D/C, Data/Command)
  *  - Nokia 5110 LCD MOSI   <-->  MSP432 LaunchPad Pin P9.7 (MOSI)
@@ -151,7 +151,9 @@ void Nokia5110_SPI_Init();
  * @param data_command_select The value indicating the data/command select bit: 0 for command, non-zero for data.
  *
  * @return None
+ *
  */
+void EUSCI_B0_Control_Chip_Select(uint8_t chip_select_enable);
 void Nokia5110_SPI_Data_Command_Bit_Out(uint8_t data_command_select);
 
 /**
