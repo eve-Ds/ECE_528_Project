@@ -27,6 +27,7 @@
 #include "inc/Motor.h"
 #include "inc/Buzzer.h"
 #include "inc/Nokia5110_LCD.h"
+#include "inc/Robo_Faces.h"
 
 //Initialize constant PWM duty cycle values for the motors
 #define PWM_NOMINAL 3000
@@ -92,18 +93,34 @@ void Process_BLE_UART_Data(char BLE_UART_Buffer[])
 
     else if (Check_BLE_UART_Data(BLE_UART_Buffer,"!B21"))
     {
+
+        Nokia5110_Init();
+        Nokia5110_Set_Contrast(0xB8);
+        Nokia5110_ClearBuffer();
+        Nokia5110_Clear();
+        Nokia5110_DrawFullImage(DomToretto);
         //Play_Note_Pattern();
+        Buzzer_On();
         Tokyo_Drift();
+        Buzzer_Off();
+                Nokia5110_Clear();
+                Nokia5110_DrawFullImage(Ovo_face);
+
+
     }
     else if (Check_BLE_UART_Data(BLE_UART_Buffer,"!B20"))
     {
         Buzzer_Off();
+        Nokia5110_Clear();
+        Nokia5110_DrawFullImage(Ovo_face);
+
     }
     else
     {
         printf("BLE UART Command Not Found\n");
     }
 }
+
 
 
 int main(void)
@@ -124,20 +141,11 @@ int main(void)
     BLE_UART_Reset();
     BLE_UART_OutString("BLE UART ACTIVE\r\n");
 
-    //Clock_Delay1ms(1000);
-
-
-    uint32_t counter = 0;
-
-       Nokia5110_Init();
-       Nokia5110_Set_Contrast(0xB1);
-       Nokia5110_ClearBuffer();
-       Nokia5110_Clear();
-       Nokia5110_SetCursor(0, 1);
-       Nokia5110_OutString(">_<");
-       EnableInterrupts();
-       Nokia5110_SetCursor(0, 3);
-       Nokia5110_OutUDec(counter);
+    Nokia5110_Init();
+    Nokia5110_Set_Contrast(0xB9);
+    Nokia5110_ClearBuffer();
+    Nokia5110_Clear();
+    Nokia5110_DrawFullImage(Ovo_face);
 
 
     while(1)
@@ -153,11 +161,6 @@ int main(void)
         }
         printf("\n");
         Process_BLE_UART_Data(BLE_UART_Buffer);
-
-        counter = counter + 1;
-        Nokia5110_SetCursor(0, 3);
-        Nokia5110_OutUDec(counter);
-        //Clock_Delay1ms(1000);
 
 
     }
