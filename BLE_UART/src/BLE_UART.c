@@ -9,10 +9,10 @@
  *  - Product Link: https://www.adafruit.com/product/2479
  *
  * The following connections must be made:
- *  - BLE UART MOD  (Pin 1)     <-->  MSP432 LaunchPad Pin P1.6
+ *  - BLE UART MOD  (Pin 1)     <-->  MSP432 LaunchPad Pin P4.6
  *  - BLE UART CTS  (Pin 2)     <-->  MSP432 LaunchPad GND
- *  - BLE UART TXO  (Pin 3)     <-->  MSP432 LaunchPad Pin P9.6 (PM_UCA2RXD)
- *  - BLE UART RXI  (Pin 4)     <-->  MSP432 LaunchPad Pin P9.7 (PM_UCA2TXD)
+ *  - BLE UART TXO  (Pin 3)     <-->  MSP432 LaunchPad Pin P3.2 (PM_UCA2RXD)
+ *  - BLE UART RXI  (Pin 4)     <-->  MSP432 LaunchPad Pin P3.3 (PM_UCA2TXD)
  *  - BLE UART VIN  (Pin 5)     <-->  MSP432 LaunchPad VCC (3.3V)
  *  - BLE UART RTS  (Pin 6)     <-->  Not Connected
  *  - BLE UART GND  (Pin 7)     <-->  MSP432 LaunchPad GND
