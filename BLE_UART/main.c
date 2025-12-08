@@ -125,17 +125,18 @@ int main(void)
 
     Clock_Delay1ms(1000);
 
+    /*
     uint32_t counter = 0;
 
        Nokia5110_Init();
-       //Nokia5110_ClearBuffer();
-       //Nokia5110_Clear();
+       Nokia5110_ClearBuffer();
+       Nokia5110_Clear();
        Nokia5110_SetCursor(0, 1);
        Nokia5110_OutString("Counter");
-       //Nokia5110_SetCursor(0, 3);
-       //Nokia5110_OutUDec(counter);
+       Nokia5110_SetCursor(0, 3);
+       Nokia5110_OutUDec(counter);
 
-
+*/
 
     while(1)
     {
@@ -150,11 +151,12 @@ int main(void)
         }
         printf("\n");
         Process_BLE_UART_Data(BLE_UART_Buffer);
-
+/*
         counter = counter + 1;
         Nokia5110_SetCursor(0, 3);
         Nokia5110_OutUDec(counter);
         Clock_Delay1ms(1000);
+        */
 
     }
 
