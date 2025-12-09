@@ -13,6 +13,8 @@ extern const unsigned char DomToretto[];
 extern const unsigned char Ovo_face[];
 extern const unsigned char Looking_Back[];
 extern const unsigned char Forward_Face[];
+extern const unsigned char Left_Face[];
+extern const unsigned char Right_Face[];
 
 
 #endif /* INC_ROBO_FACES_H_ */

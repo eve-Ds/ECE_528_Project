@@ -68,21 +68,25 @@ void Process_BLE_UART_Data(char BLE_UART_Buffer[])
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B71"))
     {
         Motor_Left(1500,1000);
+        Nokia5110_DrawFullImage(Left_Face);
     }
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B70"))
     {
         Motor_Stop();
+        Nokia5110_DrawFullImage(Ovo_face);
     }
 
     //right arrow
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B81"))
     {
         Motor_Right(1500,1000);
+        Nokia5110_DrawFullImage(Right_Face);
     }
     //right arrow
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B80"))
     {
         Motor_Stop();
+        Nokia5110_DrawFullImage(Ovo_face);
     }
     else if (Check_BLE_UART_Data(BLE_UART_Buffer,"!B11"))
     {
@@ -110,8 +114,8 @@ void Process_BLE_UART_Data(char BLE_UART_Buffer[])
         Buzzer_On();
         Tokyo_Drift();
         Buzzer_Off();
-                Nokia5110_Clear();
-                Nokia5110_DrawFullImage(Ovo_face);
+        Nokia5110_Clear();
+        Nokia5110_DrawFullImage(Ovo_face);
 
 
     }
