@@ -104,10 +104,10 @@ void Tokyo_Drift()
 {
     int note_pattern[] = {A4S_NOTE, rest, A4S_NOTE, rest, A4S_NOTE,rest, A4S_NOTE,
                           rest, A4S_NOTE, B4_NOTE, D5S_NOTE, A4S_NOTE, rest, A4S_NOTE,
-    rest, A4S_NOTE,B4_NOTE, D5S_NOTE, A4S_NOTE};
+    rest, A4S_NOTE,B4_NOTE, D5S_NOTE, A4S_NOTE, rest, A4S_NOTE,rest, A4S_NOTE,B4_NOTE,D5S_NOTE};
 
     int duration[] = {100,100,100,100,100,100,100,100,90,90,100,90,90,100,
-    100,100,100,100,100};
+    100,100,100,100,100,100,100,100,90,90,100};
     int num_notes = sizeof(note_pattern) / sizeof(note_pattern[0]);
 
     for (int i = 0; i < num_notes; i++)

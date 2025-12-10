@@ -15,6 +15,7 @@ extern const unsigned char Looking_Back[];
 extern const unsigned char Forward_Face[];
 extern const unsigned char Left_Face[];
 extern const unsigned char Right_Face[];
+extern const unsigned char Side_Look[];
 
 
 #endif /* INC_ROBO_FACES_H_ */
