@@ -26,6 +26,16 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
  
 # Pinout Plan
 
+|   Bluetooth Low Energy    |       MSP432 LaunchPad        |
+|:-------------------------:|:-----------------------------:|
+|        MOD (Pin 1)        |            Pin P4.6           | 
+|        CTS (Pin 2)        |           GND                 |
+|        TXO (pin 3)        |    Pin P3.2 (PM_UCA2RXD)      |        
+|        RXI (Pin 4)        |    Pin3.3 (PM_UCA2TXD)        |
+|        VIN (Pin 5)        |       VCC (3.3V)              |
+|        RTS (Pin 6)        |       Not COnnected           |
+|        GND (Pin 7)        |            GND                |
+|        DFU (pin 8)        |        Not Connected          |
 
 
 
