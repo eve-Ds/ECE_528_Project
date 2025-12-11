@@ -33,7 +33,7 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 |        TXO (pin 3)        |    Pin P3.2 (PM_UCA2RXD)      |        
 |        RXI (Pin 4)        |    Pin3.3 (PM_UCA2TXD)        |
 |        VIN (Pin 5)        |       VCC (3.3V)              |
-|        RTS (Pin 6)        |       Not COnnected           |
+|        RTS (Pin 6)        |       Not Connected           |
 |        GND (Pin 7)        |            GND                |
 |        DFU (pin 8)        |        Not Connected          |
 
