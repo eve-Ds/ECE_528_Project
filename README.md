@@ -9,6 +9,8 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 
 
 # Block Diagram
+<img width="1453" height="1163" alt="image" src="https://github.com/user-attachments/assets/e3df0938-0e7f-459d-a8c6-7c82af6f1e40" />
+
 
 
 
@@ -23,5 +25,6 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 
 
 # Analysis and Results
+
 
 
