@@ -1,6 +1,19 @@
+/**
+ * @file Robo_Faces.c
+ *
+ * @brief Code for the images used for the robots face
+ *
+ *  Changed images into byte arrays using: https://javl.github.io/image2cpp/
+ *
+ *
+ * @author Evelyn Dominguez
+ *
+ */
+
 
 #include "inc/Robo_Faces.h"
 
+// bitmap image of Dom Toretto
  extern const unsigned char DomToretto[] =
  {
   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,

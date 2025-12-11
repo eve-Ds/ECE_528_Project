@@ -15,7 +15,7 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 # Components Used
 
 |      Description          |    Quantity    |      Manufacturer        |
-|:---------------------------------------------------------------------:|
+|:-------------------------:|:--------------:|:------------------------:|
 |    MSP432 LaunchPad       |       1        |     Texas Instruments    |
 |   TI-RSLK MAX Chassis     |       1        |          Pololu          |
 |  USB-A to Micro-USB Cable |       1        |           N/A            |       
