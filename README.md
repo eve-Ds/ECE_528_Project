@@ -54,14 +54,14 @@ This project integrated several embedded systems concepts to achieve communicati
 # Ovo Faces
 These are the faces I designed for Ovo.
 
-<img src = "Screenshot 2025-12-13 145411.png" width = "500" >
+<img src = "Screenshot 2025-12-13 145411.png" width = "800" >
 
 
 
 
 # Analysis and Results
 
-<img src ="IMG_2307.jpg" width = "430">
+<img src ="IMG_2307.jpg" width = "330">
 
 Ovo Driving: https://youtu.be/r4-ORKmzRS0
 
