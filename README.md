@@ -54,7 +54,10 @@ This project integrated several embedded systems concepts to achieve communicati
 # Ovo Faces
 These are the faces I designed for Ovo.
 
-<img src = "Robot_face.jpeg" width = "500">
+<img src = "Robot_face.jpeg" width = "500">    <img src = "OvOface.png" width = "500">
+
+
+
 
 # Analysis and Results
 
