@@ -140,9 +140,8 @@ int main(void)
     Clock_Init48MHz();
     DisableInterrupts();
 
-    LED2_Init();
     Buzzer_Init();
-    EUSCI_A0_UART_Init_Printf();
+    //EUSCI_A0_UART_Init_Printf();
     BLE_UART_Init();
     Motor_Init();
 
@@ -162,7 +161,6 @@ int main(void)
     while(1)
     {
 
-
         int string_size = BLE_UART_InString(BLE_UART_Buffer, BLE_UART_BUFFER_SIZE);
 
         printf("BLE UART Data: ");
@@ -172,7 +170,6 @@ int main(void)
         }
         printf("\n");
         Process_BLE_UART_Data(BLE_UART_Buffer);
-
 
     }
 

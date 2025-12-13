@@ -4,7 +4,7 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 
 # Background and Methodology 
 
-
+This project integrated several embedded systems concepts to achieve communication and control. A Bluetooth Low Energy module was used to enable wireless communication between the smartphone and microcontroller via UART, allowing users to control the robot's movements. Pulse Width Modulation (PWM) was implemented to control the DC motors. Serial Peripheral Interface communication was implemented to display images on the Nokia 5110 LCD. General-Purpose Input/Output (GPIO) pins were utilized to generate different frequencies for the piezo buzzer. 
 
 # Block Diagram
 
@@ -53,6 +53,7 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 
 # Ovo Faces
 These are the faces I designed for Ovo.
+
 ![alt text](Robot_face.jpeg)
 
 # Analysis and Results
