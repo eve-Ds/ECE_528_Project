@@ -59,6 +59,9 @@ These are the faces I designed for Ovo.
 # Analysis and Results
 
 ![alt text](IMG_2307.jpg)
+
 <video controls src="Drive.mov" title="Driving"></video>
+
 <video controls src="Ovo_face.mov" title="Ovo's Face"></video>
+
 <video controls src="Song5.mov" title="Tokyo Drift"></video>
