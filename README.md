@@ -57,9 +57,7 @@ These are the faces I designed for Ovo.
 <img src = "Screenshot 2025-12-13 145411.png" width = "800" >
 
 
-
-
-# Analysis and Results
+# Video Demonstration Links
 
 <img src ="IMG_2307.jpg" width = "330">
 
