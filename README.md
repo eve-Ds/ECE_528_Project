@@ -52,7 +52,8 @@ Ovo is a remote-controlled robot equipped with an LCD that displays different fa
 
 
 # Ovo Faces
-
+These are the faces I drew for Ovo.
+![alt text](Robot_face.jpeg)
 
 # Analysis and Results
 
