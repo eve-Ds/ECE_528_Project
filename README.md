@@ -54,11 +54,11 @@ This project integrated several embedded systems concepts to achieve communicati
 # Ovo Faces
 These are the faces I designed for Ovo.
 
-![alt text](Robot_face.jpeg)
+<img src = "Robot_face.jpeg" width = "500">
 
 # Analysis and Results
 
-<img src ="IMG_2307.jpg" width = "200">
+<img src ="IMG_2307.jpg" width = "430">
 
 Ovo Driving: https://youtu.be/r4-ORKmzRS0
 
