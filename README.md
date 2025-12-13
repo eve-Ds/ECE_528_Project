@@ -60,8 +60,10 @@ These are the faces I designed for Ovo.
 
 ![alt text](IMG_2307.jpg)
 
-<video controls src="Drive.mov" title="Driving"></video>
+Ovo Driving: https://youtu.be/r4-ORKmzRS0
 
-<video controls src="Ovo_face.mov" title="Ovo's Face"></video>
+Ovo's Expressions: https://www.canva.com/design/DAG7bhxHWCQ/B5_Cf27sAy9gdtBTdjJQow/edit?utm_content=DAG7bhxHWCQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-<video controls src="Song5.mov" title="Tokyo Drift"></video>
+
+Piezo Buzzer - Tokyo Drift:https://www.canva.com/design/DAG7bsygZCc/PzzIqpFg-ZjRoki9gT7rlg/edit?utm_content=DAG7bsygZCc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
