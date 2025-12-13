@@ -58,7 +58,7 @@ These are the faces I designed for Ovo.
 
 # Analysis and Results
 
-![alt text](IMG_2307.jpg)
+<img src ="IMG_2307.jpg" width = "200">
 
 Ovo Driving: https://youtu.be/r4-ORKmzRS0
 
