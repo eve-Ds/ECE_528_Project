@@ -24,7 +24,7 @@ This project integrated several embedded systems concepts to achieve communicati
  
 # Pinout Plan
 
-|   Bluetooth Low Energy    |       MSP432 LaunchPad        |
+|   Bluetooth Low Energy    |       MSP432 LaunchPad        | 
 |:-------------------------:|:-----------------------------:|
 |        MOD (Pin 1)        |            Pin P4.1           | 
 |        CTS (Pin 2)        |           GND                 |
@@ -58,5 +58,7 @@ These are the faces I designed for Ovo.
 
 # Analysis and Results
 
-
-
+![alt text](IMG_2307.jpg)
+<video controls src="Drive.mov" title="Driving"></video>
+<video controls src="Ovo_face.mov" title="Ovo's Face"></video>
+<video controls src="Song5.mov" title="Tokyo Drift"></video>
