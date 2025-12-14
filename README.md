@@ -63,8 +63,7 @@ These are the faces I designed for Ovo.
 
 Ovo Driving: https://youtu.be/r4-ORKmzRS0
 
-Ovo's Expressions: https://www.canva.com/design/DAG7bhxHWCQ/B5_Cf27sAy9gdtBTdjJQow/edit?utm_content=DAG7bhxHWCQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Ovo's Expressions: https://www.canva.com/design/DAG7bhxHWCQ/bIhWXu6SjIuhuoc_l8vJ6A/watch?utm_content=DAG7bhxHWCQ&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7cd8569fb0
 
-
-Piezo Buzzer - Tokyo Drift:https://www.canva.com/design/DAG7bsygZCc/PzzIqpFg-ZjRoki9gT7rlg/edit?utm_content=DAG7bsygZCc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+Piezo Buzzer - Tokyo Drift: https://www.canva.com/design/DAG7bsygZCc/9VHba1PyLYLNd88mPoWoXA/watch?utm_content=DAG7bsygZCc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h7631764d4a
 
