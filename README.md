@@ -56,6 +56,8 @@ These are the faces I designed for Ovo.
 
 <img src = "Screenshot 2025-12-13 145411.png" width = "800" >
 
+# Results
+Ovo successfully executed directional movements (forward, backward, left, and right). The LCD displayed expressions corresponding to each movement, and pressing button 2 triggered the buzzer to play "Tokyo Drift".
 
 # Video Demonstration Links
 
