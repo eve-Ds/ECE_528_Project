@@ -6,7 +6,9 @@
  * It provides functions for initializing the motor driver, controlling motor movement in various directions,
  * adjusting motor speed with PWM, and stopping the motors.
  *
- * @author Aaron Nanas
+ * @author Aaron Nanas and Evelyn Dominguez
+ *
+ * @note used from Lab
  *
  */
 

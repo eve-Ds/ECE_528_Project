@@ -3,14 +3,7 @@
  *
  * @brief Main source code for the BLE_UART program.
  *
- * This file contains the main entry point for the BLE_UART program,
- * which is used to demonstrate the BLE_UART driver.
- *
- * It interfaces with the Adafruit Bluefruit LE UART Friend Bluetooth Low Energy (BLE) module, which uses the UART communication protocol.
- *  - Product Link: https://www.adafruit.com/product/2479
- *
- * @note For more information regarding the Enhanced Universal Serial Communication Interface (eUSCI),
- * refer to the MSP432Pxx Microcontrollers Technical Reference Manual
+ * This file contains the main functions used to control Ovo.
  *
  * @author Evelyn Dominguez
  *
@@ -22,7 +15,6 @@
 
 #include "inc/Clock.h"
 #include "inc/CortexM.h"
-#include "inc/GPIO.h"
 #include "inc/EUSCI_A0_UART.h"
 #include "inc/Motor.h"
 #include "inc/Buzzer.h"
@@ -34,14 +26,14 @@
 
 void Process_BLE_UART_Data(char BLE_UART_Buffer[])
 {
-    //when up arrow is pressed robot moves forward
+    //when up arrow is pressed robot moves forward and displays image
     if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B51"))
     {
         Motor_Forward(1500,2000);
         Nokia5110_DrawFullImage(Forward_Face);
 
     }
-    //when up arrow is released robot stops
+    //when up arrow is released robot stops and changes back to default image
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B50"))
     {
         Motor_Stop();
@@ -50,7 +42,7 @@ void Process_BLE_UART_Data(char BLE_UART_Buffer[])
 
     }
 
-    //when down arrow is pressed robot moves backward
+    //when down arrow is pressed robot moves backward and displays an image
     else if (Check_BLE_UART_Data (BLE_UART_Buffer, "!B61"))
     {
         Motor_Backward(900,1505);
@@ -76,18 +68,19 @@ void Process_BLE_UART_Data(char BLE_UART_Buffer[])
         Nokia5110_DrawFullImage(Ovo_face);
     }
 
-    //right arrow
+    //Robot moves right when right arrow is pressed
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B81"))
     {
         Motor_Right(1500,1000);
         Nokia5110_DrawFullImage(Right_Face);
     }
-    //right arrow
+    //Robot stop when right button is released
     else if (Check_BLE_UART_Data(BLE_UART_Buffer, "!B80"))
     {
         Motor_Stop();
         Nokia5110_DrawFullImage(Ovo_face);
     }
+    // If button 1 is pressed it follows this movement sequence
     else if (Check_BLE_UART_Data(BLE_UART_Buffer,"!B11"))
     {
 
@@ -101,7 +94,7 @@ void Process_BLE_UART_Data(char BLE_UART_Buffer[])
         Clock_Delay1ms(4000);
         Motor_Stop();
     }
-
+    // If button 2 is pressed Tokyo Drift will play
     else if (Check_BLE_UART_Data(BLE_UART_Buffer,"!B21"))
     {
 
@@ -141,7 +134,6 @@ int main(void)
     DisableInterrupts();
 
     Buzzer_Init();
-    //EUSCI_A0_UART_Init_Printf();
     BLE_UART_Init();
     Motor_Init();
 

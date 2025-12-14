@@ -33,7 +33,6 @@ void BLE_UART_Init()
     P3-> SEL0 |= 0x0C;
     P3-> SEL1 &= ~0x0C;
 
-    //P4.1
     P4->SEL0 &= ~0x01;
     P4->SEL1 &= ~0x01;
     P4->DIR |= 0x01;

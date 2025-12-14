@@ -5,7 +5,7 @@
  * This file contains the function definitions for the Buzzer driver.
  * It interfaces with a Piezo Buzzer using the P4.6 pin (GPIO).
  *
- * @author Aaron Nanas
+ * @author Evelyn Dominguez
  *
  */
 
@@ -65,14 +65,20 @@ void Buzzer_Off();
 void Play_Note(int note_delay_value);
 
 /**
- * @brief The Play_Note_Pattern function plays multiple tones using the Piezo Buzzer.
+ * @brief The Tokyo_Drift function plays snippet of the song Tokyo Drift using the Piezo Buzzer.
  *
- * This function plays the following notes in order: C4, D4, E4, F4, G4, A4, and B4.
+ * This function plays the following notes in order: A4S_NOTE, rest, A4S_NOTE, rest, A4S_NOTE,rest, A4S_NOTE,
+ * rest, A4S_NOTE, B4_NOTE, D5S_NOTE, A4S_NOTE, rest, A4S_NOTE,
+ * rest, A4S_NOTE,B4_NOTE, D5S_NOTE, A4S_NOTE, rest, A4S_NOTE,rest, A4S_NOTE,B4_NOTE,D5S_NOTE
  *
+ * @reference: I referenced this Arduino code to play Tokyo Drift:
+ *              https://github.com/hibit-dev/buzzer/blob/master/src/movies/tokyo_drift/tokyo_drift.ino
  * @param None
  *
  * @return None
  */
-void Play_Note_Pattern();
+
+void Tokyo_Drift();
 
 #endif /* INC_BUZZER_H_ */
+
